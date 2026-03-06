@@ -1,71 +1,92 @@
-body{
-font-family:Arial;
-margin:0;
-background:#f4f6f9;
-color:#222;
+const container = document.getElementById("websiteContainer");
+const searchBox = document.getElementById("searchBox");
+const categoryFilter = document.getElementById("categoryFilter");
+
+let allLinks = [];
+
+fetch("links.json")
+.then(res => res.json())
+.then(data => {
+
+allLinks = data;
+
+displayLinks(allLinks);
+loadCategories();
+
+});
+
+function displayLinks(links){
+
+container.innerHTML="";
+
+links.forEach(site=>{
+
+const domain = new URL(site.url).hostname;
+
+const icon = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+
+const card = document.createElement("div");
+
+card.className="card";
+
+card.innerHTML=`
+
+<img src="${icon}">
+<div>
+<a href="${site.url}" target="_blank">${site.name}</a>
+<p>${site.category}</p>
+</div>
+
+`;
+
+container.appendChild(card);
+
+});
+
 }
 
-header{
-background:#1f2937;
-color:white;
-padding:20px;
-text-align:center;
+function loadCategories(){
+
+const categories=[...new Set(allLinks.map(i=>i.category))];
+
+categories.forEach(cat=>{
+
+const option=document.createElement("option");
+
+option.value=cat;
+
+option.textContent=cat;
+
+categoryFilter.appendChild(option);
+
+});
+
 }
 
-.controls{
-margin-top:15px;
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
+searchBox.addEventListener("input", filterLinks);
+
+categoryFilter.addEventListener("change", filterLinks);
+
+function filterLinks(){
+
+const search=searchBox.value.toLowerCase();
+
+const category=categoryFilter.value;
+
+const filtered=allLinks.filter(site=>{
+
+const matchSearch=site.name.toLowerCase().includes(search);
+
+const matchCategory=category==="all" || site.category===category;
+
+return matchSearch && matchCategory;
+
+});
+
+displayLinks(filtered);
+
 }
 
-input,select,button{
-padding:10px;
-border-radius:6px;
-border:none;
-}
-
-main{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-padding:30px;
-}
-
-.card{
-background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-.card a{
-text-decoration:none;
-color:#2563eb;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:#eee;
-}
-
-/* DARK MODE */
-
-.dark{
-background:#111827;
-color:white;
-}
-
-.dark .card{
-background:#1f2937;
-}
-
-.dark header{
-background:black;
-}
-
-.dark footer{
-background:#000;
-}
+document.getElementById("darkModeToggle").onclick=()=>{
+document.body.classList.toggle("dark");
+};
