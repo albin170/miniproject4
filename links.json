@@ -1,0 +1,98 @@
+[
+{"name":"Khan Academy","url":"https://www.khanacademy.org","category":"Education"},
+{"name":"Coursera","url":"https://www.coursera.org","category":"Education"},
+{"name":"edX","url":"https://www.edx.org","category":"Education"},
+{"name":"FutureLearn","url":"https://www.futurelearn.com","category":"Education"},
+{"name":"MIT OpenCourseWare","url":"https://ocw.mit.edu","category":"Education"},
+{"name":"OpenLearn","url":"https://www.open.edu/openlearn","category":"Education"},
+{"name":"Academic Earth","url":"https://academicearth.org","category":"Education"},
+{"name":"Saylor Academy","url":"https://www.saylor.org","category":"Education"},
+{"name":"Alison","url":"https://alison.com","category":"Education"},
+{"name":"Open Culture","url":"https://www.openculture.com","category":"Education"},
+
+
+{"name":"Stack Overflow","url":"https://stackoverflow.com","category":"Programming"},
+{"name":"GitHub","url":"https://github.com","category":"Programming"},
+{"name":"GitLab","url":"https://gitlab.com","category":"Programming"},
+{"name":"Bitbucket","url":"https://bitbucket.org","category":"Programming"},
+{"name":"LeetCode","url":"https://leetcode.com","category":"Programming"},
+{"name":"HackerRank","url":"https://www.hackerrank.com","category":"Programming"},
+{"name":"CodePen","url":"https://codepen.io","category":"Programming"},
+{"name":"JSFiddle","url":"https://jsfiddle.net","category":"Programming"},
+{"name":"Replit","url":"https://replit.com","category":"Programming"},
+{"name":"W3Schools","url":"https://www.w3schools.com","category":"Programming"},
+{"name":"GeeksforGeeks","url":"https://www.geeksforgeeks.org","category":"Programming"},
+{"name":"FreeCodeCamp","url":"https://www.freecodecamp.org","category":"Programming"},
+
+
+{"name":"OpenAI","url":"https://openai.com","category":"AI Tools"},
+{"name":"Hugging Face","url":"https://huggingface.co","category":"AI Tools"},
+{"name":"Perplexity","url":"https://www.perplexity.ai","category":"AI Tools"},
+{"name":"Runway","url":"https://runwayml.com","category":"AI Tools"},
+{"name":"Leonardo AI","url":"https://leonardo.ai","category":"AI Tools"},
+{"name":"Poe","url":"https://poe.com","category":"AI Tools"},
+{"name":"Character AI","url":"https://character.ai","category":"AI Tools"},
+{"name":"Midjourney","url":"https://midjourney.com","category":"AI Tools"},
+{"name":"ElevenLabs","url":"https://elevenlabs.io","category":"AI Tools"},
+{"name":"Playground AI","url":"https://playgroundai.com","category":"AI Tools"},
+
+
+{"name":"Canva","url":"https://www.canva.com","category":"Design Tools"},
+{"name":"Figma","url":"https://www.figma.com","category":"Design Tools"},
+{"name":"Adobe Express","url":"https://express.adobe.com","category":"Design Tools"},
+{"name":"Pixlr","url":"https://pixlr.com","category":"Design Tools"},
+{"name":"Photopea","url":"https://www.photopea.com","category":"Design Tools"},
+{"name":"Gravit Designer","url":"https://designer.io","category":"Design Tools"},
+{"name":"Vectr","url":"https://vectr.com","category":"Design Tools"},
+{"name":"VistaCreate","url":"https://create.vista.com","category":"Design Tools"},
+
+
+{"name":"Investopedia","url":"https://www.investopedia.com","category":"Finance"},
+{"name":"Yahoo Finance","url":"https://finance.yahoo.com","category":"Finance"},
+{"name":"TradingView","url":"https://www.tradingview.com","category":"Finance"},
+{"name":"Morningstar","url":"https://www.morningstar.com","category":"Finance"},
+{"name":"CoinMarketCap","url":"https://coinmarketcap.com","category":"Finance"},
+{"name":"CoinGecko","url":"https://www.coingecko.com","category":"Finance"},
+
+
+{"name":"Udemy","url":"https://www.udemy.com","category":"Learning Platforms"},
+{"name":"Skillshare","url":"https://www.skillshare.com","category":"Learning Platforms"},
+{"name":"LinkedIn Learning","url":"https://www.linkedin.com/learning","category":"Learning Platforms"},
+{"name":"MasterClass","url":"https://www.masterclass.com","category":"Learning Platforms"},
+{"name":"Pluralsight","url":"https://www.pluralsight.com","category":"Learning Platforms"},
+{"name":"DataCamp","url":"https://www.datacamp.com","category":"Learning Platforms"},
+
+
+{"name":"Docker Hub","url":"https://hub.docker.com","category":"Developer Tools"},
+{"name":"Postman","url":"https://www.postman.com","category":"Developer Tools"},
+{"name":"Vercel","url":"https://vercel.com","category":"Developer Tools"},
+{"name":"Netlify","url":"https://www.netlify.com","category":"Developer Tools"},
+{"name":"Heroku","url":"https://www.heroku.com","category":"Developer Tools"},
+{"name":"Supabase","url":"https://supabase.com","category":"Developer Tools"},
+
+
+{"name":"SmallPDF","url":"https://smallpdf.com","category":"Online Utilities"},
+{"name":"ILovePDF","url":"https://www.ilovepdf.com","category":"Online Utilities"},
+{"name":"Remove.bg","url":"https://www.remove.bg","category":"Online Utilities"},
+{"name":"TinyPNG","url":"https://tinypng.com","category":"Online Utilities"},
+{"name":"Convertio","url":"https://convertio.co","category":"Online Utilities"},
+{"name":"CloudConvert","url":"https://cloudconvert.com","category":"Online Utilities"},
+
+
+{"name":"Ahrefs","url":"https://ahrefs.com","category":"Marketing Tools"},
+{"name":"SEMrush","url":"https://www.semrush.com","category":"Marketing Tools"},
+{"name":"Mailchimp","url":"https://mailchimp.com","category":"Marketing Tools"},
+{"name":"Buffer","url":"https://buffer.com","category":"Marketing Tools"},
+{"name":"Hootsuite","url":"https://hootsuite.com","category":"Marketing Tools"},
+{"name":"HubSpot","url":"https://hubspot.com","category":"Marketing Tools"},
+
+
+{"name":"Notion","url":"https://www.notion.so","category":"Productivity"},
+{"name":"Trello","url":"https://trello.com","category":"Productivity"},
+{"name":"Asana","url":"https://asana.com","category":"Productivity"},
+{"name":"ClickUp","url":"https://clickup.com","category":"Productivity"},
+{"name":"Todoist","url":"https://todoist.com","category":"Productivity"},
+{"name":"Evernote","url":"https://evernote.com","category":"Productivity"},
+{"name":"Google Keep","url":"https://keep.google.com","category":"Productivity"},
+{"name":"Microsoft To Do","url":"https://todo.microsoft.com","category":"Productivity"}
+]
