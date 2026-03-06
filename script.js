@@ -1,37 +1,110 @@
 const container = document.getElementById("websiteContainer");
 const searchBox = document.getElementById("searchBox");
 const categoryFilter = document.getElementById("categoryFilter");
+const darkModeToggle = document.getElementById("darkModeToggle");
 
-let allLinks = [];
+const categories = [
+"Education",
+"Programming",
+"AI Tools",
+"Design",
+"Finance",
+"Learning",
+"Developer Tools",
+"Online Utilities",
+"Marketing",
+"Productivity",
+"SEO Tools",
+"Cloud Services",
+"Startup Tools",
+"Analytics",
+"Video Tools"
+];
 
-fetch("links.json")
-.then(res => res.json())
-.then(data => {
+let allSites = [];
 
-allLinks = data;
 
-displayLinks(allLinks);
-loadCategories();
+/* Generate 1200 websites */
+
+categories.forEach(category => {
+
+for(let i=1;i<=80;i++){
+
+allSites.push({
+name: `${category} Site ${i}`,
+url: `https://example.com/${category.replace(/\s/g,'').toLowerCase()}/${i}`,
+category: category
+});
+
+}
 
 });
 
-function displayLinks(links){
+
+/* Load category filter */
+
+categories.forEach(cat=>{
+
+let option=document.createElement("option");
+
+option.value=cat;
+option.textContent=cat;
+
+categoryFilter.appendChild(option);
+
+});
+
+
+displaySites(allSites);
+
+
+
+function displaySites(sites){
 
 container.innerHTML="";
 
-links.forEach(site=>{
+let grouped={};
 
-const domain = new URL(site.url).hostname;
+sites.forEach(site=>{
 
-const icon = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+if(!grouped[site.category]) grouped[site.category]=[];
 
-const card = document.createElement("div");
+grouped[site.category].push(site);
+
+});
+
+
+Object.keys(grouped).forEach(category=>{
+
+let section=document.createElement("div");
+
+section.className="categorySection";
+
+let title=document.createElement("h2");
+
+title.textContent=category;
+
+section.appendChild(title);
+
+let grid=document.createElement("div");
+
+grid.className="grid";
+
+
+grouped[category].forEach(site=>{
+
+const domain=new URL(site.url).hostname;
+
+const icon=`https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+
+let card=document.createElement("div");
 
 card.className="card";
 
 card.innerHTML=`
 
 <img src="${icon}">
+
 <div>
 <a href="${site.url}" target="_blank">${site.name}</a>
 <p>${site.category}</p>
@@ -39,54 +112,53 @@ card.innerHTML=`
 
 `;
 
-container.appendChild(card);
+grid.appendChild(card);
+
+});
+
+
+section.appendChild(grid);
+
+container.appendChild(section);
 
 });
 
 }
 
-function loadCategories(){
 
-const categories=[...new Set(allLinks.map(i=>i.category))];
 
-categories.forEach(cat=>{
+/* Search + Filter */
 
-const option=document.createElement("option");
+function filterSites(){
 
-option.value=cat;
+let search=searchBox.value.toLowerCase();
 
-option.textContent=cat;
+let category=categoryFilter.value;
 
-categoryFilter.appendChild(option);
+let filtered=allSites.filter(site=>{
 
-});
+let matchSearch=site.name.toLowerCase().includes(search);
 
-}
-
-searchBox.addEventListener("input", filterLinks);
-
-categoryFilter.addEventListener("change", filterLinks);
-
-function filterLinks(){
-
-const search=searchBox.value.toLowerCase();
-
-const category=categoryFilter.value;
-
-const filtered=allLinks.filter(site=>{
-
-const matchSearch=site.name.toLowerCase().includes(search);
-
-const matchCategory=category==="all" || site.category===category;
+let matchCategory=(category==="all"||site.category===category);
 
 return matchSearch && matchCategory;
 
 });
 
-displayLinks(filtered);
+displaySites(filtered);
 
 }
 
-document.getElementById("darkModeToggle").onclick=()=>{
+searchBox.addEventListener("input",filterSites);
+
+categoryFilter.addEventListener("change",filterSites);
+
+
+
+/* Dark Mode */
+
+darkModeToggle.onclick=()=>{
+
 document.body.classList.toggle("dark");
+
 };
